@@ -1,17 +1,18 @@
-import React from 'react'
-import { useState, useEffect } from 'react';
-import { Typography, Container, Box, Grid } from '@mui/material';
-import backgroundImage from '../images/background2.png';
-
+import React, { useState, useEffect } from 'react';
+import { Typography, Box } from '@mui/material';
+// Importing App.css in your component or App.js
+import '../App.css';
+import '@fontsource/share-tech-mono';
 
 type Props = {}
 
 function Hero({ }: Props) {
     const [loopNum, setLoopNum] = useState<number>(0);
     const [isDeleting, setIsDeleting] = useState<boolean>(false);
-    const toRotate: string[] = ["Developer", "Plate Bencher", "Epic Gamer"]
+    const toRotate: string[] = ["developer.", "plate bencher.", "food lover."];
     const [text, setText] = useState<string>('');
     const [delta, setDelta] = useState<number>(300 - Math.random() * 100);
+    const [showCursor, setShowCursor] = useState<boolean>(true);
     const period: number = 2000;
 
     useEffect(() => {
@@ -20,7 +21,7 @@ function Hero({ }: Props) {
         }, delta);
 
         return () => { clearInterval(ticker) };
-    }, [text]);
+    }, [text, delta]);
 
     const tick = () => {
         let i = loopNum % toRotate.length;
@@ -28,7 +29,7 @@ function Hero({ }: Props) {
         let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
 
         setText(updatedText);
-
+        setShowCursor(!showCursor);
         if (isDeleting) {
             setDelta(prevDelta => prevDelta / 2);
         }
@@ -42,29 +43,47 @@ function Hero({ }: Props) {
             setDelta(500);
         }
     }
+
     return (
-        <Box sx={{ marginTop: "0", padding: "260px 0 100px 0", backgroundImage: `url(${backgroundImage})`, backgroundSize: "100% 100%" }}>
-            <Grid container columns={12}>
-                <Grid item xs={4}>
-                    <Typography></Typography>
-                </Grid>
-                <Grid item xs={4}>
-                    <Typography sx={{
-                        fontSize: '30px',
-                        fontWeight: '700',
-                        marginBottom: '20px',
-                        display: 'block',
-                        marginLeft: "3rem",
-                        fontFamily: "monospace"
-                    }}>{text}</Typography>
+        <section id='hero'>
+        <Box sx={{ marginTop: "0", padding: "260px 0 100px 0", backgroundColor: "white", height: "25vh" }}>
+            <Typography sx={{
+                fontSize: '4rem',
+                fontWeight: '700',
+                display: 'block',
+                marginLeft: "15rem",
+                fontFamily: "'Share Tech Mono', monospace",
+                minHeight: "50px",
+                color: "#9E9BFF"
+            }}>Hi, my name is Han Tran</Typography>
+            <Box sx={{ display: "flex", flexDirection: "row" }}>
+                <Typography sx={{
+                    fontSize: '4rem',
+                    fontWeight: '700',
+                    display: 'block',
+                    marginLeft: "15rem",
+                    fontFamily: "'Share Tech Mono', monospace",
+                    minHeight: "50px",
+                    color: "#9E9BFF"
+                }}>
+                    and I am a
+                </Typography>{" "} 
+                <Typography sx={{
+                    fontSize: '4rem',
+                    fontWeight: '700',
+                    display: 'block',
+                    fontFamily: "'Share Tech Mono', monospace",
+                    minHeight: "50px",
+                    color: "#FF9E9B ",
+                    marginLeft:"2rem"
+                }}>{" "}{text}<span className={showCursor ? "cursor" : ""}>|</span></Typography>
 
-                </Grid>
-                <Grid item xs={4}>
+            </Box>
 
-                </Grid>
-            </Grid>
         </Box>
+
+        </section>
     )
 }
 
-export default Hero
+export default Hero;
