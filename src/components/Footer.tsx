@@ -5,7 +5,7 @@ function Footer() {
   return (
     <Box 
       width={'100%'} 
-      height={'10vh'} 
+      height={'6vh'} 
       sx={{
         background: "#8E8FFA", 
         display: "flex", 
