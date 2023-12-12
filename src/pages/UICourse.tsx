@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Tab, Tabs, Typography, Box } from "@mui/material";
 import Blogs from "../components/Blogs";
 import UIWork from "../components/UIWork";
@@ -38,6 +38,9 @@ function a11yProps(index: number) {
 }
 
 export default function UICourse({}: Props) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
