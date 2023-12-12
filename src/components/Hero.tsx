@@ -62,7 +62,7 @@ function Hero({}: Props) {
         <Grid
           container
           columns={12}
-          spacing={1}
+          spacing={4}
           justifyContent={"center"}
           alignItems={"center"}
         >
@@ -116,6 +116,7 @@ function Hero({}: Props) {
               src={headshot}
               alt="Headshot of Han Tran"
               style={{
+                marginLeft:"1rem",
                 width: "auto",
                 height: "18rem",
                 border: "0 solid #EA906C",
