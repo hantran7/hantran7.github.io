@@ -7,6 +7,7 @@ import {
   CardContent,
   CardMedia,
   CardActionArea,
+  Button,
 } from "@mui/material";
 import "../App.css";
 import experinceImage from "../images/experience.jpg";
@@ -43,12 +44,13 @@ interface BlogCardProps {
   onOpen: () => void;
 }
 const BlogCard: React.FC<BlogCardProps> = ({ title, image, onOpen }) => (
-  <Card 
-  className="cardHoverEffect"
+  <Card
+    className="cardHoverEffect"
     sx={{
       width: 345,
       borderRadius: "1rem",
-      background: "linear-gradient(277deg, rgba(142,143,250,0.4682247899159664) 0%, rgba(234,144,108,0.5634628851540616) 42%)",
+      background:
+        "linear-gradient(277deg, rgba(142,143,250,0.4682247899159664) 0%, rgba(234,144,108,0.5634628851540616) 42%)",
       margin: "1rem",
     }}
   >
@@ -144,6 +146,10 @@ function Blogs() {
   };
 
   const handleClose = () => setOpen(false);
+  const [isReversed, setIsReversed] = useState(false);
+  const toggleSortOrder = () => {
+    setIsReversed(!isReversed);
+  };
 
   const blogs = [
     {
@@ -755,6 +761,22 @@ function Blogs() {
 
   return (
     <div style={blurStyle}>
+      <Button
+        onClick={toggleSortOrder}
+        sx={{
+          borderRadius: "4px",
+          backgroundColor: "#8E8FFA",
+          color: "white",
+          fontFamily: "'Share Tech Mono', monospace",
+          fontSize: "1.5rem",
+          marginBottom: "1rem",
+          "&:hover": {
+            backgroundColor: "#EA906C",
+          },
+        }}
+      >
+        {isReversed ? "Order By Oldest" : "Order by Most Recent"}
+      </Button>
       <div
         style={{
           display: "flex",
@@ -763,14 +785,15 @@ function Blogs() {
           justifyContent: "space-evenly",
         }}
       >
-        {blogs.map((blog, index) => (
-          <BlogCard
-            key={index}
-            title={blog.title}
-            image={blog.image}
-            onOpen={() => handleOpen(blog)}
-          />
-        ))}
+      {(isReversed ? [...blogs].reverse() : blogs).map((blog, index) => (
+        <BlogCard
+          key={index}
+          title={blog.title}
+          image={blog.image}
+          onOpen={() => handleOpen(blog)}
+        />
+      ))}
+
         <BlogModal
           open={open}
           onClose={handleClose} // Ensure this is the only onClose attribute
