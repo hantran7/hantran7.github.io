@@ -1,28 +1,49 @@
 import React, { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Typography, Button } from '@mui/material';
-import { Link as RouterLink } from 'react-router-dom';
+import { NavHashLink } from 'react-router-hash-link';
 import '@fontsource/share-tech-mono';
 
-type Props = {}
 
-function NavBar({ }: Props) {
-  console.log('Rendering NavBar...');
-  const [activeLink, setActiveLink] = useState<string>('home');
+function NavBar() {
+  const [activeLink, setActiveLink] = useState<string>('about');
   const [scrolled, setScrolled] = useState<boolean>(false);
 
   useEffect(() => {
     const onScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    }
+      const sections = ['about', 'work', 'contact']; 
+      let activeSection = '';
 
-    window.addEventListener("scroll", onScroll);
+      sections.forEach((sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+            activeSection = sectionId;
+          }
+        }
+      });
 
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [])
+      setActiveLink(activeSection);
+      setScrolled(window.scrollY > 64);
+    };
+
+    const debounce = (func: () => void, delay: number): () => void => {
+      let timer: NodeJS.Timeout | null = null;
+
+      return function () {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(() => {
+          func();
+        }, delay);
+      };
+    };
+
+
+    const debouncedScrollHandler = debounce(onScroll, 10);
+
+    window.addEventListener("scroll", debouncedScrollHandler);
+    return () => window.removeEventListener("scroll", debouncedScrollHandler);
+  }, []);
 
 
   const handleScroll = (sectionId: string) => {
@@ -31,6 +52,13 @@ function NavBar({ }: Props) {
     setActiveLink(sectionId);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    setActiveLink('');
+  };
   return (
     <AppBar position="fixed" elevation={0} sx={{
       width: '100%',
@@ -38,60 +66,43 @@ function NavBar({ }: Props) {
       zIndex: 9999,
       transition: '0.32s ease-in-out',
       padding: scrolled ? '0px 0' : '0',
-      // backgroundColor: scrolled ? '#FF9E9B9B' : '#1976d200 !important',
       backgroundColor: scrolled ? 'black' : '#1976d200 !important',
       color: 'black'
     }}>
       <Toolbar sx={{ marginLeft: "3rem", marginRight: "3rem" }}>
-        <Typography variant="h6" onClick={() => handleScroll('hero')} component="div" sx={{
-          flexGrow: 1, color: scrolled? "white" :"black",
-          fontFamily: "'Share Tech Mono', monospace", fontSize: "2rem",
-          cursor: "pointer"
-        }}>
-          Han Tran
-        </Typography>
-        <Button
-          color="inherit"
-          onClick={() => handleScroll('home')}
-          sx={{
-            color: scrolled ? (activeLink === 'home' ? '#9E9BFF' : 'white') : (activeLink === 'home' ? '#9E9BFF' : 'black'),
-            fontWeight: activeLink === 'home' ? 'bold' : 'normal',
-            fontFamily: "'Share Tech Mono', monospace",
-            fontSize: "1.5rem",
-            marginRight: "3rem"
-          }}
-        >
-          About
-        </Button>
+        <NavHashLink smooth to="/" style={{ textDecoration: 'none', flexGrow: 1 }} onClick={scrollToTop}>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              flexGrow: 1,
+              color: scrolled ? "white" : "black",
+              fontFamily: "'Share Tech Mono', monospace",
+              fontSize: "2rem",
+              cursor: "pointer",
+              textDecoration: 'none'
+            }}
+          >
+            Han Tran
+          </Typography>
 
-        <Button
-          color="inherit"
-          onClick={() => handleScroll('work')}
-          sx={{
-            color: scrolled ? (activeLink === 'work' ? '#9E9BFF' : 'white') : (activeLink === 'work' ? '#9E9BFF' : 'black'),
-            fontWeight: activeLink === 'work' ? 'bold' : 'normal',
-            fontFamily: "'Share Tech Mono', monospace",
-            fontSize: "1.5rem",
-            marginRight: "3rem"
-          }}
-        >
-          Work
-        </Button>
+        </NavHashLink>
 
-        <Button
-          color="inherit"
-          onClick={() => handleScroll('contact')}
-          sx={{
-            color: scrolled ? (activeLink === 'contact' ? '#9E9BFF' : 'white') : (activeLink === 'contact' ? '#9E9BFF' : 'black'),
-            fontWeight: activeLink === 'contact' ? 'bold' : 'normal',
-            fontFamily: "'Share Tech Mono', monospace",
-            fontSize: "1.5rem"
-          }}
-        >
-          Contact
-        </Button>
-
-
+        <NavHashLink smooth to="/#about" style={{ textDecoration: 'none' }}>
+          <Button onClick={() => handleScroll('about')} sx={{ fontFamily: "'Share Tech Mono', monospace", fontSize: "1.5rem", marginRight: "3rem", color: activeLink === 'about' ? '#9E9BFF' : (scrolled ? 'white' : 'black') }} >
+            About
+          </Button>
+        </NavHashLink>
+        <NavHashLink smooth to="/#work" style={{ textDecoration: 'none' }}>
+          <Button onClick={() => handleScroll('work')} sx={{ fontFamily: "'Share Tech Mono', monospace", fontSize: "1.5rem", marginRight: "3rem", color: activeLink === 'work' ? '#9E9BFF' : (scrolled ? 'white' : 'black') }}>
+            Work
+          </Button>
+        </NavHashLink>
+        <NavHashLink smooth to="/#contact" style={{ textDecoration: 'none' }}>
+          <Button onClick={() => handleScroll('contact')} sx={{ fontFamily: "'Share Tech Mono', monospace", fontSize: "1.5rem", color: activeLink === 'contact' ? '#9E9BFF' : (scrolled ? 'white' : 'black') }}>
+            Contact
+          </Button>
+        </NavHashLink>
       </Toolbar>
     </AppBar>
   );

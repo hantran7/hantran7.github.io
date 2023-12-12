@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Typography, Box } from '@mui/material';
+import { Typography, Box, Grid } from '@mui/material';
 // Importing App.css in your component or App.js
 import '../App.css';
 import '@fontsource/share-tech-mono';
+import headshot from '../images/headshot1.png'
 
 type Props = {}
 
@@ -46,42 +47,57 @@ function Hero({ }: Props) {
 
     return (
         <section id='hero'>
-        <Box sx={{ marginTop: "0", padding: "260px 0 100px 0", backgroundColor: "white", height: "25vh" }}>
-            <Typography sx={{
-                fontSize: '4rem',
-                fontWeight: '700',
-                display: 'block',
-                marginLeft: "15rem",
-                fontFamily: "'Share Tech Mono', monospace",
-                minHeight: "50px",
-                color: "#9E9BFF"
-            }}>Hi, my name is Han Tran</Typography>
-            <Box sx={{ display: "flex", flexDirection: "row" }}>
-                <Typography sx={{
-                    fontSize: '4rem',
-                    fontWeight: '700',
-                    display: 'block',
-                    marginLeft: "15rem",
-                    fontFamily: "'Share Tech Mono', monospace",
-                    minHeight: "50px",
-                    color: "#9E9BFF"
-                }}>
-                    and I am a
-                </Typography>{" "} 
-                <Typography sx={{
-                    fontSize: '4rem',
-                    fontWeight: '700',
-                    display: 'block',
-                    fontFamily: "'Share Tech Mono', monospace",
-                    minHeight: "50px",
-                    color: "#FF9E9B ",
-                    marginLeft:"2rem"
-                }}>{" "}{text}<span className={showCursor ? "cursor" : ""}>|</span></Typography>
-
+            <Box sx={{ marginTop: "0", padding: "260px 0 100px 0", backgroundColor: "white", height: "25vh" }}>
+                <Grid container columns={12} spacing={1} justifyContent={'center'} alignItems={'center'}>
+                    <Grid item xs={8}>
+                        <Typography sx={{
+                            fontSize: '4rem',
+                            fontWeight: '700',
+                            display: 'block',
+                            marginLeft: "15rem",
+                            fontFamily: "'Share Tech Mono', monospace",
+                            minHeight: "50px",
+                            color: "#9E9BFF"
+                        }}>Hi, my name is Han Tran</Typography>
+                        <Box sx={{ display: "flex", flexDirection: "row" }}>
+                            <Typography sx={{
+                                fontSize: '4rem',
+                                fontWeight: '700',
+                                display: 'block',
+                                marginLeft: "15rem",
+                                fontFamily: "'Share Tech Mono', monospace",
+                                minHeight: "50px",
+                                color: "#9E9BFF"
+                            }}>
+                                and I am a
+                            </Typography>{" "}
+                            <Typography sx={{
+                                fontSize: '4rem',
+                                fontWeight: '700',
+                                display: 'block',
+                                fontFamily: "'Share Tech Mono', monospace",
+                                minHeight: "50px",
+                                color: "#FF9E9B ",
+                                marginLeft: "2rem"
+                            }}>{" "}{text}<span className={showCursor ? "cursor" : ""}>|</span></Typography>
+                        </Box>
+                    </Grid>
+                    <Grid item xs={4}>
+                        
+                        <img
+                            src={headshot}
+                            alt="Headshot of Han Tran"
+                            style={{
+                                width: 'auto', 
+                                height: '18rem',
+                                border: "0 solid #FF9E9B",
+                                borderRadius: "50%",
+                                backgroundColor: "#FF9E9B"
+                            }}
+                        />
+                    </Grid>
+                </Grid>
             </Box>
-
-        </Box>
-
         </section>
     )
 }
