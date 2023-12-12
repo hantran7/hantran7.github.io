@@ -146,7 +146,7 @@ function UIWork() {
           exercise.
       </p>
       <h4>This is a page from the Campus Cash app, which is an app with coupons for students.</h4>
-      <img src="${campuscash}" style="width: 20%; height: auto;">
+      <img src="${campuscash}" alt="Campus Cash Screen Shot" style="width: 20%; height: auto;">
       <p>The app’s theme is monochromatic. It uses different shades of green. The blend of green
           shades imparts a harmonious feel, as the hues complement one another
           and aid in distinguishing between different elements. Because of its monochromatic theme,
@@ -162,7 +162,7 @@ function UIWork() {
           and renewal. It can also be associated with financial wellness or eco-friendliness, which
           fits with the purpose of the app.
       </p>
-      <img src="${pinkcc}" style="width: 20%; height: auto;">
+      <img src="${pinkcc}" alt="Pink Color Scheme Campus Cash"  style="width: 20%; height: auto;">
       <p>
           This iteration of the UI employs a near split-complementary color scheme, featuring a
           red-purple hue (resulting in a pinkish tone), orange, and green.
@@ -176,7 +176,7 @@ function UIWork() {
           colors harmonize tranquility
           with dynamism, crafting a refreshing yet grounded design.
       </p>
-      <imgvsrc="${neutralcc}" style="width: 20%; height: auto;">
+      <imgvsrc="${neutralcc}" alt="Neutral Color Scheme Campus Cash" style="width: 20%; height: auto;">
       <p>
           Although the this redesigned UI does not fit into a harmonious combination, it features a
           serene pastel blue app bar,
@@ -187,7 +187,7 @@ function UIWork() {
           adding a splash of vitality and enthusiasm. Collectively,
           this palette melds soft sophistication with energetic vibrancy, crafting an inviting design.
       </p>
-      <img src="${tealcc}" style="width: 20%; height: auto;">
+      <img src="${tealcc}" alt="Teal Color Scheme Campus Cash" style="width: 20%; height: auto;">
       <p>This iteration of the UI closely aligns with a split-complementary color scheme,
           incorporating shades of blue-green, blue-purple, and red-orange.
           The bright blue-green background offers a refreshing and invigorating base, capturing
@@ -264,7 +264,7 @@ function UIWork() {
           deeper exploration and appreciation of Avery's artistic nuances.</p>
       </p>
       <h4>My inspired UI:</h4>
-      <img src="${ocean}" style="width: 100%; height: auto;">
+      <img src="${ocean}"  alt="Ocean Om Mockup" style="width: 100%; height: auto;">
       <p> The UI is a screen from the "Ocean Om" app, designed with a calming oceanic theme. The top
           of the screen features the "Ocean Om" logo in a soothing light blue, followed by a darker
           blue header labeled "Meditation Station". Beneath this header, there's a beige sandy-colored

@@ -296,9 +296,9 @@ function StockednStacked() {
           life through fitness and nutrition. This narrative shaped the UI, culminating in a design that's not just
           functional but motivational. <br>
           <br>Here are a few of my early sketches and an early Figma mockup: <br>
-          <img src="${earlymockup1}" style="width: 20%; height: auto;">
-          <img src="${earlymockup2}" style="width: 50%; height: auto;">
-          <img  src="${earlymockup3}" style="width: 80%; height: auto;">
+          <img src="${earlymockup1}" alt="Early Mockup" style="width: 20%; height: auto;">
+          <img src="${earlymockup2}" alt="Early Mockup" style="width: 50%; height: auto;">
+          <img  src="${earlymockup3}" alt="Early Mockup" style="width: 80%; height: auto;">
           <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450"
               src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FANN3ehYS0TyPrKPEegSPd1%2FStocked-%2526-Stacked%3Ftype%3Ddesign%26node-id%3D105%253A3328%26mode%3Ddesign%26t%3DEO0FO2c3h1IWuOx1-1"
               allowfullscreen></iframe>
@@ -408,9 +408,9 @@ function StockednStacked() {
           life through fitness and nutrition. This narrative shaped the UI, culminating in a design that's not just
           functional but motivational. <br>
           <br>Here are a few of my early sketches and an early Figma mockup: <br>
-          <img src="${earlymockup1}" style="width: 20%; height: auto;">
-          <img src="${earlymockup2}" style="width: 50%; height: auto;">
-          <img  src="${earlymockup3}" style="width: 80%; height: auto;">
+          <img src="${earlymockup1}" alt="Early Mockup" style="width: 20%; height: auto;">
+          <img src="${earlymockup2}" alt="Early Mockup" style="width: 50%; height: auto;">
+          <img  src="${earlymockup3}" alt="Early Mockup" style="width: 80%; height: auto;">
           <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450"
               src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FANN3ehYS0TyPrKPEegSPd1%2FStocked-%2526-Stacked%3Ftype%3Ddesign%26node-id%3D105%253A3328%26mode%3Ddesign%26t%3DEO0FO2c3h1IWuOx1-1"
               allowfullscreen></iframe>

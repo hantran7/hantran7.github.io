@@ -268,7 +268,7 @@ function Blogs() {
       content: `<h3>#ConceptMap </h3>
         <h4>Colors I</h4>
         <p>
-            <img src="${venn1}" style="width: 100%; height: auto;">
+            <img src="${venn1} alt="venn diagram" style="width: 100%; height: auto;">
 
 
             Colors don't just enhance aesthetics but evoke emotions and reinforce brand identity,
@@ -319,7 +319,7 @@ function Blogs() {
       content: `<h3>#ConceptMap </h3>
         <h4>Navigation & Values</h4>
         <p>
-            <img src="${venn2}" style="width: 100%; height: auto;">
+            <img src="${venn2}" alt="venn diagram" style="width: 100%; height: auto;">
 
             Both UI design and team dynamics in the workplace revolve around mutual understanding and
             creating seamless experiences.
@@ -359,7 +359,7 @@ function Blogs() {
             encode these typographic
             elements systematically for ease of maintenance and responsiveness.
         </p>
-        <img src="${myred}" style="width: 100%; height: auto;">
+        <img src="${myred}  alt="MyRed Screenshot"" style="width: 100%; height: auto;">
         <p>
             MyRed's user interface (UI) is a good example of effective typography in web design.
             The platform establishes a clear typographical hierarchy, with each section introduced by
@@ -428,9 +428,9 @@ function Blogs() {
             <br><br>
         <h5>Screen shots of the home page with my own markups: </h5>
 
-        <img src="${alani1}" style="width: 100%; height: auto;">
-        <img src="${alani2}" style="width: 100%; height: auto;">
-        <img src="${alani3}" style="width: 100%; height: auto;">
+        <img src="${alani1}" alt="Alani Nu Website screen shot" style="width: 100%; height: auto;">
+        <img src="${alani2}" alt="Alani Nu Website screen shot" style="width: 100%; height: auto;">
+        <img src="${alani3}" alt="Alani Nu Website screen shot" style="width: 100%; height: auto;">
         <br><br>
         If I could redesign this homepage, I would first change the tagline. "Here for you and your
         taste buds" seems too broad.
