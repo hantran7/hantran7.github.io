@@ -13,9 +13,9 @@ import stocked from "../images/stocked.png";
 import prototype from "../images/snsprototype.png";
 import prototype2 from "../images/prototype2.png";
 import designsystem from "../images/designsystem.png";
-import earlymockup1 from '../images/earlymockup1.png'
-import earlymockup2 from '../images/earlymockup2.png'
-import earlymockup3 from '../images/earlymockup3.png'
+import earlymockup1 from "../images/earlymockup1.png";
+import earlymockup2 from "../images/earlymockup2.png";
+import earlymockup3 from "../images/earlymockup3.png";
 interface BlogCardProps {
   title: string;
   image: string;
@@ -23,10 +23,12 @@ interface BlogCardProps {
 }
 const BlogCard: React.FC<BlogCardProps> = ({ title, image, onOpen }) => (
   <Card
+    className="cardHoverEffect"
     sx={{
       width: 345,
       borderRadius: "1rem",
-      backgroundColor: "#FF9E9B",
+      background:
+        "linear-gradient(277deg, rgba(142,143,250,0.4682247899159664) 0%, rgba(234,144,108,0.5634628851540616) 42%)",
       margin: "1rem",
     }}
   >
@@ -380,7 +382,6 @@ function StockednStacked() {
     {
       title: "Design Evolution Narrative",
       content: `
-      <h1 style="text-align: center;">Design Evolution Narrative Draft</h1>
 
       <p>As I reflect on the journey of developing my unique UI project, I'm reminded of the singular path I embarked
           on. This project was a solo endeavor, a testament to my dedication and vision. It was born out of a personal
@@ -479,22 +480,30 @@ function StockednStacked() {
           <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450"
               src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FANN3ehYS0TyPrKPEegSPd1%2FStocked-%2526-Stacked%3Ftype%3Ddesign%26node-id%3D209%253A7160%26mode%3Ddesign%26t%3DEO0FO2c3h1IWuOx1-1"
               allowfullscreen></iframe>
-          <br>
-          My design values of ambition and confidence shone through every aspect of the UI. The color choices and the
-          consistent, straightforward layout were not just about aesthetics but also about empowering users to take
-          control of their fitness and dietary journey with confidence and ease.
+          <br><br>As I reflect on the journey of developing my unique UI project, it's impossible to ignore the guiding principles that drove my design choices: ambition and confidence. These values were not mere abstract concepts but integral components woven into the very fabric of the user experience I aimed to create.
 
-          In essence, this project was a labor of love, a manifestation of my personal journey, and a tribute to those
-          on a similar path. It was a journey of learning, adapting, and ultimately, creating something that not only
-          served a purpose but also inspired and motivated.
-      </p>`,
+          <br><br>
+Ambition: From the outset, I envisioned an app that would not just meet the needs of its users but also inspire them to push their boundaries, set ambitious fitness and nutritional goals, and chase their dreams relentlessly. I wanted users to feel a surge of ambition as they interacted with the app, as if it were a trusted companion on their journey to self-improvement.
+
+This ambition is reflected in the color choices I made for the app. The vibrant shades of orange inject energy and positivity, symbolizing the enthusiasm and drive needed to embark on a fitness and nutrition transformation. The use of contrasting and attention-grabbing colors in the user interface serves as a visual call to action, urging users to take charge of their health and well-being.
+<br><br>
+Confidence: As a designer, I recognized the importance of creating an interface that not only looks appealing but also instills confidence in users. Confidence to navigate, track, plan, and improve their fitness and nutrition journeys. Every design decision, from the layout to the clarity of the interface, was aimed at making users feel in control and assured.
+
+          <br><br>
+The app's structure, with its straightforward and intuitive navigation, encourages users to explore and engage without hesitation. The addition of clear descriptions and distinct visual identities for various sections of the app provides users with immediate context, reducing any uncertainty and boosting their confidence in using the app effectively.
+
+          <br><br>
+Furthermore, the app's core functionality, which includes meal planning and nutritional tracking, serves as a tool for organization and empowerment. Users can rely on it to stay organized and track their nutrition with precision, reinforcing their confidence in their ability to achieve their fitness and dietary goals.
+
+          <br><br>
+In essence, my design values of ambition and confidence are not just abstract principles but tangible elements incorporated into every aspect of the UI. My goal was to create an app that not only meets the practical needs of users but also empowers them to dream big, take action, and believe in their ability to make positive changes in their lives. This project was not just a design endeavor; it was a journey of learning, adapting, and ultimately, creating something that not only served a purpose but also inspired and motivated. </p>`,
       image: stocked,
     },
   ];
   return (
     <div style={{ ...blurStyle, marginTop: "4rem" }}>
       <h1 style={{ display: "flex", justifyContent: "center" }}>
-        User Interface
+        Stocked & Stacked
       </h1>
       <div
         style={{

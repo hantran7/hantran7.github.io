@@ -15,6 +15,7 @@ import neutralcc from "../images/neutralcc.png";
 import tealcc from "../images/tealcc.png";
 import ocean from "../images/oceanom.png";
 import summit from "../images/summit.png";
+import me from "../images/me.png"
 
 interface BlogCardProps {
   title: string;
@@ -23,10 +24,12 @@ interface BlogCardProps {
 }
 const BlogCard: React.FC<BlogCardProps> = ({ title, image, onOpen }) => (
   <Card
+    className="cardHoverEffect"
     sx={{
       width: 345,
       borderRadius: "1rem",
-      backgroundColor: "#FF9E9B",
+      background:
+        "linear-gradient(277deg, rgba(142,143,250,0.4682247899159664) 0%, rgba(234,144,108,0.5634628851540616) 42%)",
       margin: "1rem",
     }}
   >
@@ -124,7 +127,6 @@ function UIWork() {
 
   const handleClose = () => setOpen(false);
 
-  // Your blogs data
   const blogs = [
     {
       title: "Color Study",
@@ -322,6 +324,11 @@ function UIWork() {
           set that I will carry forward to create more accessible and user-friendly digital experiences in the future.
       </p>`,
       image: summit,
+    },
+    {
+      title: "Making of My Portfolio",
+      content: `<p>In creating my portfolio, I've emphasized my values of ambition and authenticity, and strengths in perseverance and adaptability. I've implemented clean, intuitive navigation with a consistent app bar on every page, ensuring easy accessibility for users. My choice of contrasting yet harmonious colors reflects my personal aesthetic and design philosophy. I've paid special attention to the harmony between affordances and signifiers, ensuring that interactive elements like buttons change color on hover, enhancing user engagement. A significant aspect of my portfolio is showcasing my evolution as a designer, transitioning from a basic template to a custom-built site using React TypeScript, a journey that underscores my growth and adaptability. Throughout, I've made sure to properly attribute others' work, underlining my commitment to integrity in design. This portfolio is a true representation of my professional identity, blending my skills, values, and personal design journey. </p>`,
+      image: me,
     },
   ];
   return (

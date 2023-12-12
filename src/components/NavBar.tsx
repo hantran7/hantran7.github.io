@@ -89,17 +89,17 @@ function NavBar() {
         </NavHashLink>
 
         <NavHashLink smooth to="/#about" style={{ textDecoration: 'none' }}>
-          <Button onClick={() => handleScroll('about')} sx={{ fontFamily: "'Share Tech Mono', monospace", fontSize: "1.5rem", marginRight: "3rem", color: activeLink === 'about' ? '#9E9BFF' : (scrolled ? 'white' : 'black') }} >
+          <Button onClick={() => handleScroll('about')} sx={{ fontFamily: "'Share Tech Mono', monospace", fontSize: "1.5rem", marginRight: "3rem", color: activeLink === 'about' ? '#8E8FFA' : (scrolled ? 'white' : 'black') }} >
             About
           </Button>
         </NavHashLink>
         <NavHashLink smooth to="/#work" style={{ textDecoration: 'none' }}>
-          <Button onClick={() => handleScroll('work')} sx={{ fontFamily: "'Share Tech Mono', monospace", fontSize: "1.5rem", marginRight: "3rem", color: activeLink === 'work' ? '#9E9BFF' : (scrolled ? 'white' : 'black') }}>
+          <Button onClick={() => handleScroll('work')} sx={{ fontFamily: "'Share Tech Mono', monospace", fontSize: "1.5rem", marginRight: "3rem", color: activeLink === 'work' ? '#8E8FFA' : (scrolled ? 'white' : 'black') }}>
             Work
           </Button>
         </NavHashLink>
         <NavHashLink smooth to="/#contact" style={{ textDecoration: 'none' }}>
-          <Button onClick={() => handleScroll('contact')} sx={{ fontFamily: "'Share Tech Mono', monospace", fontSize: "1.5rem", color: activeLink === 'contact' ? '#9E9BFF' : (scrolled ? 'white' : 'black') }}>
+          <Button onClick={() => handleScroll('contact')} sx={{ fontFamily: "'Share Tech Mono', monospace", fontSize: "1.5rem", color: activeLink === 'contact' ? '#8E8FFA' : (scrolled ? 'white' : 'black') }}>
             Contact
           </Button>
         </NavHashLink>

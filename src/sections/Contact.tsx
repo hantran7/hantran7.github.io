@@ -32,7 +32,7 @@ function Contact() {
       id="contact"
       style={{
         display: "flex",
-        height: "100vh",
+        height: "70vh",
         justifyContent: "center",
         alignItems: "center",
       }}
@@ -43,7 +43,7 @@ function Contact() {
           width: "80vw",
         }}
       >
-        <Grid container alignItems="basweline" columns={12}>
+        <Grid container  columns={12} spacing={3}>
           <Grid item xs={4}>
             <Typography
               sx={{
@@ -53,11 +53,39 @@ function Contact() {
             >
               Contact me
             </Typography>
+            <p>
+              The contact
+              section may not be fully operational as it is currently undergoing maintenance. Feel free to get in touch
+              with me via email at han7tran@gmail.com. I appreciate your
+              understanding and look forward to connecting with you!
+            </p>
           </Grid>
           <Grid item xs={8}>
             {" "}
             <form id="contact-form" onSubmit={handleSubmit}>
               <TextField
+                InputLabelProps={{
+                  style: { fontFamily: "'Share Tech Mono', monospace" }, 
+                }}
+                sx={{
+                  "& label.Mui-focused": {
+                    color: "#8E8FFA", 
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    "&.Mui-focused fieldset": {
+                      borderColor: "#8E8FFA",
+                    },
+                    "& fieldset": {
+                      borderColor: "#EA906C",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "#8E8FFA", 
+                    },
+                  },
+                  "& label": {
+                    color: "#EA906C" 
+                  }
+                }}
                 label="Name"
                 name="name"
                 value={formDetails.name}
@@ -66,6 +94,28 @@ function Contact() {
                 margin="normal"
               />
               <TextField
+                InputLabelProps={{
+                  style: { fontFamily: "'Share Tech Mono', monospace" }, 
+                }}
+                sx={{
+                  "& label.Mui-focused": {
+                    color: "#8E8FFA",
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    "&.Mui-focused fieldset": {
+                      borderColor: "#8E8FFA", 
+                    },
+                    "& fieldset": {
+                      borderColor: "#EA906C",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "#8E8FFA", 
+                    },
+                  },
+                  "& label": {
+                    color: "#EA906C" 
+                  }
+                }}
                 label="Email Address"
                 name="email"
                 type="email"
@@ -75,6 +125,28 @@ function Contact() {
                 margin="normal"
               />
               <TextField
+                InputLabelProps={{
+                  style: { fontFamily: "'Share Tech Mono', monospace" }, 
+                }}
+                sx={{
+                  "& label.Mui-focused": {
+                    color: "#8E8FFA", 
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    "&.Mui-focused fieldset": {
+                      borderColor: "#8E8FFA", 
+                    },
+                    "& fieldset": {
+                      borderColor: "#EA906C",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "#8E8FFA", 
+                    },
+                  },
+                  "& label": {
+                    color: "#EA906C" 
+                  }
+                }}
                 label="Message"
                 name="message"
                 multiline
@@ -84,14 +156,22 @@ function Contact() {
                 fullWidth
                 margin="normal"
               />
-              <Button type="submit" variant="contained" color="primary" 
-                    sx={{
-                      borderRadius: "4px",
-                      backgroundColor: "#9E9BFF",
-                      color: "white",
-                      fontFamily: "'Share Tech Mono', monospace",
-                      fontSize: "1.5rem", marginBottom:"1rem"
-                    }}>
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                sx={{
+                  borderRadius: "4px",
+                  backgroundColor: "#8E8FFA",
+                  color: "white",
+                  fontFamily: "'Share Tech Mono', monospace",
+                  fontSize: "1.5rem",
+                  marginBottom: "1rem",
+                  "&:hover": {
+                    backgroundColor: "#EA906C", 
+                  },
+                }}
+              >
                 Submit
               </Button>
             </form>

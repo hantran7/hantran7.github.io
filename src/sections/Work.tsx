@@ -53,28 +53,29 @@ function Work({}: Props) {
         >
           <Grid item xs={3}>
             <Card
+              className="cardHoverEffect"
               sx={{
                 width: "20rem",
-                border: "3px solid #FF9E9B",
                 borderRadius: "1rem",
-                backgroundColor: "#FF9E9B",
-                height:"25rem"
+                background:
+                  "linear-gradient(277deg, rgba(142,143,250,0.4682247899159664) 0%, rgba(234,144,108,0.5634628851540616) 42%)",
+                height: "25rem",
               }}
             >
               <CardActionArea onClick={() => handleCardClick("/ui-course")}>
                 <CardMedia component="img" height={"140"} image={uiImage} />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
-                    <h3>
-                    User Interfaces</h3>
+                    <h3>User Interfaces</h3>
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     <p>
-                    User Interfaces is a hands-on course focused on designing
-                    and evaluating user interfaces from an industry perspective,
-                    with an emphasis on understanding human psychology,
-                    physiology, cultural values, usability, accessibility, and
-                    building a UI/UX portfolio.</p>
+                      User Interfaces is a hands-on course focused on designing
+                      and evaluating user interfaces from an industry
+                      perspective, with an emphasis on understanding human
+                      psychology, physiology, cultural values, usability,
+                      accessibility, and building a UI/UX portfolio.
+                    </p>
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -82,12 +83,13 @@ function Work({}: Props) {
           </Grid>
           <Grid item xs={3}>
             <Card
+              className="cardHoverEffect"
               sx={{
                 width: "20rem",
-                border: "3px solid #FF9E9B",
                 borderRadius: "1rem",
-                backgroundColor: "#FF9E9B",
-                height:"25rem"
+                background:
+                  "linear-gradient(277deg, rgba(142,143,250,0.4682247899159664) 0%, rgba(234,144,108,0.5634628851540616) 42%)",
+                height: "25rem",
               }}
             >
               <CardActionArea
@@ -96,14 +98,14 @@ function Work({}: Props) {
                 <CardMedia component="img" height={"140"} image={stocked} />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
-                    <h3>
-                    Stocked & Stacked</h3>
+                    <h3>Stocked & Stacked</h3>
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     <p>
-                    Stocked & Stacked is a project that originated as my final
-                    project during a UI design course, and now I'm eager to
-                    dedicate my personal time to develop it.</p>
+                      Stocked & Stacked is a project that originated as my final
+                      project during a UI design course, and now I'm eager to
+                      dedicate my personal time to develop it.
+                    </p>
                   </Typography>
                 </CardContent>
               </CardActionArea>

@@ -43,11 +43,12 @@ interface BlogCardProps {
   onOpen: () => void;
 }
 const BlogCard: React.FC<BlogCardProps> = ({ title, image, onOpen }) => (
-  <Card
+  <Card 
+  className="cardHoverEffect"
     sx={{
       width: 345,
       borderRadius: "1rem",
-      backgroundColor: "#FF9E9B",
+      background: "linear-gradient(277deg, rgba(142,143,250,0.4682247899159664) 0%, rgba(234,144,108,0.5634628851540616) 42%)",
       margin: "1rem",
     }}
   >
@@ -144,7 +145,6 @@ function Blogs() {
 
   const handleClose = () => setOpen(false);
 
-  // Your blogs data
   const blogs = [
     {
       title: "Affordances & Signifiers I",

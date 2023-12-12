@@ -5,6 +5,8 @@ import "../App.css";
 import "@fontsource-variable/dosis";
 import "@fontsource/share-tech-mono";
 import "@fontsource/ubuntu";
+import linkedin from "../images/icons8-linkedin-64.png";
+
 type Props = {};
 
 function Bio({}: Props) {
@@ -26,9 +28,9 @@ function Bio({}: Props) {
         sx={{
           height: "50vh",
           width: "70vw",
-          border: "5px solid #FF9E9B",
           borderRadius: "2rem",
-          backgroundColor: "#FF9E9B",
+          background:
+            "linear-gradient(277deg, rgba(142,143,250,0.7682247899159664) 0%, rgba(234,144,108,0.78783263305322133) 100%)",
         }}
       >
         <Grid
@@ -55,18 +57,31 @@ function Bio({}: Props) {
               }}
             >
               {" "}
-              <Button
-                onClick={handleOpenResume}
-                sx={{
-                  borderRadius: "4px",
-                  backgroundColor: "#9E9BFF",
-                  color: "white",
-                  fontFamily: "'Share Tech Mono', monospace",
-                  fontSize: "1.5rem",
-                }}
-              >
-                Resume
-              </Button>
+              <Box sx={{ display: "flex" }}>
+                <Button
+                  onClick={handleOpenResume}
+                  sx={{
+                    borderRadius: "4px",
+                    backgroundColor: "#8E8FFA",
+                    color: "white",
+                    fontFamily: "'Share Tech Mono', monospace",
+                    fontSize: "1.5rem",
+                    "&:hover": {
+                      backgroundColor: "#EA906C",
+                    },
+                    marginRight: "1rem",
+                  }}
+                >
+                  Resume
+                </Button>
+                <a 
+                  href="https://www.linkedin.com/in/htran3802/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={linkedin} alt="LinkedIn" className="cardHoverEffect"/>
+                </a>
+              </Box>
               <Modal open={openResume} onClose={handleCloseResume}>
                 <Box
                   sx={{
@@ -74,22 +89,26 @@ function Bio({}: Props) {
                     top: "50%",
                     left: "50%",
                     transform: "translate(-50%, -50%)",
-                    width: "50vw", // Adjust width as needed
-                    height: "70vh", // Adjust height as needed
+                    width: "50vw",
+                    height: "70vh",
                     bgcolor: "background.paper",
                     boxShadow: 24,
                     p: 3,
-                    overflowY: "auto", // Optional: for scrollable content
+                    overflowY: "auto",
                   }}
                 >
                   <Button
                     onClick={handleCloseResume}
                     sx={{
                       borderRadius: "4px",
-                      backgroundColor: "#9E9BFF",
+                      backgroundColor: "#8E8FFA",
                       color: "white",
                       fontFamily: "'Share Tech Mono', monospace",
-                      fontSize: "1.5rem", marginBottom:"1rem"
+                      fontSize: "1.5rem",
+                      marginBottom: "1rem",
+                      "&:hover": {
+                        backgroundColor: "#EA906C",
+                      },
                     }}
                   >
                     Close
@@ -107,7 +126,8 @@ function Bio({}: Props) {
             <Typography
               sx={{
                 fontFamily: "'Share Tech Mono', monospace",
-                fontSize: "1.5rem", lineHeight:"2.5rem"
+                fontSize: "1.5rem",
+                lineHeight: "2.5rem",
               }}
             >
               <p>

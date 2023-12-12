@@ -66,7 +66,7 @@ export default function UICourse({}: Props) {
           sx={{ display: "flex", justifyContent: "center" }}
           TabIndicatorProps={{ 
             style: { 
-              backgroundColor: '#9E9BFF', // Change to your desired color
+              backgroundColor: '#8E8FFA', // Change to your desired color
               // Additional styles for the indicator
             }
           }}
@@ -76,7 +76,7 @@ export default function UICourse({}: Props) {
               fontFamily: "'Share Tech Mono', monospace",
               fontSize: "1.5rem",
               "&.Mui-selected": {
-                color: "#9E9BFF",
+                color: "#8E8FFA",
               },
             }}
             label="Blogs"
@@ -87,7 +87,7 @@ export default function UICourse({}: Props) {
               fontFamily: "'Share Tech Mono', monospace",
               fontSize: "1.5rem",
               "&.Mui-selected": {
-                color: "#9E9BFF",
+                color: "#8E8FFA",
               },
             }}
             label="Work"
