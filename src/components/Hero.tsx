@@ -69,7 +69,7 @@ function Hero({}: Props) {
           <Grid item xs={8}>
             <Typography
               sx={{
-                fontSize: "4rem",
+                fontSize: "3.5rem",
                 fontWeight: "700",
                 display: "block",
                 marginLeft: "15rem",
@@ -83,7 +83,7 @@ function Hero({}: Props) {
             <Box sx={{ display: "flex", flexDirection: "row" }}>
               <Typography
                 sx={{
-                  fontSize: "4rem",
+                  fontSize: "3.5rem",
                   fontWeight: "700",
                   display: "block",
                   marginLeft: "15rem",
@@ -96,7 +96,7 @@ function Hero({}: Props) {
               </Typography>{" "}
               <Typography
                 sx={{
-                  fontSize: "4rem",
+                  fontSize: "3.5rem",
                   fontWeight: "700",
                   display: "block",
                   fontFamily: "'Share Tech Mono', monospace",
