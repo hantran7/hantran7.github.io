@@ -8,22 +8,40 @@ import {
   CardMedia,
   CardActionArea,
 } from "@mui/material";
-import mockup from '../images/snsmockups.png'
-import stocked from '../images/stocked.png'
-import prototype from '../images/snsprototype.png'
-import prototype2 from '../images/prototype2.png'
-import designsystem from '../images/designsystem.png'
+import mockup from "../images/snsmockups.png";
+import stocked from "../images/stocked.png";
+import prototype from "../images/snsprototype.png";
+import prototype2 from "../images/prototype2.png";
+import designsystem from "../images/designsystem.png";
+import earlymockup1 from '../images/earlymockup1.png'
+import earlymockup2 from '../images/earlymockup2.png'
+import earlymockup3 from '../images/earlymockup3.png'
 interface BlogCardProps {
   title: string;
   image: string;
   onOpen: () => void;
 }
 const BlogCard: React.FC<BlogCardProps> = ({ title, image, onOpen }) => (
-  <Card sx={{ width: 345, border: "4px solid black", margin: "2rem" }}>
+  <Card
+    sx={{
+      width: 345,
+      borderRadius: "1rem",
+      backgroundColor: "#FF9E9B",
+      margin: "1rem",
+    }}
+  >
     <CardActionArea onClick={onOpen}>
       <CardMedia component="img" height={"140"} image={image} />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography
+          gutterBottom
+          variant="h5"
+          component="div"
+          sx={{
+            fontFamily: "'Share Tech Mono', monospace",
+            textAlign: "center",
+          }}
+        >
           {title}
         </Typography>
       </CardContent>
@@ -64,14 +82,15 @@ const BlogModal: React.FC<BlogModalProps> = ({
         maxHeight: "80vh", // Maximum height of the modal
         overflowY: "auto", // Allow vertical scrolling
         bgcolor: "background.paper",
-        border: "2px solid #000",
+
+        borderRadius: "1rem",
         boxShadow: 24,
         p: 4,
       }}
     >
       <CardMedia component="img" height={"auto"} />
       <Typography id="modal-modal-title" variant="h6" component="h2">
-        {title}
+        <h3> {title}</h3>
       </Typography>
       <div dangerouslySetInnerHTML={{ __html: content }} />
     </Box>
@@ -232,7 +251,7 @@ function StockednStacked() {
       <h2>Prototype</h2>
       <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FANN3ehYS0TyPrKPEegSPd1%2FStocked-%2526-Stacked%3Ftype%3Ddesign%26node-id%3D30%253A955%26mode%3Ddesign%26t%3DZGRhRpuHRvcjfHpm-1" allowfullscreen></iframe>        
   `,
-      image: prototype
+      image: prototype,
     },
     {
       title: "Revised Prototype",
@@ -243,7 +262,7 @@ function StockednStacked() {
       <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450"
           src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FANN3ehYS0TyPrKPEegSPd1%2FStocked-%2526-Stacked%3Ftype%3Ddesign%26node-id%3D209%253A7160%26mode%3Ddesign%26t%3DQWxIxQhKH8gSZBrD-1"
           allowfullscreen></iframe>`,
-      image: prototype2
+      image: prototype2,
     },
     {
       title: "Design Evolution Narrative Draft",
@@ -275,9 +294,9 @@ function StockednStacked() {
           life through fitness and nutrition. This narrative shaped the UI, culminating in a design that's not just
           functional but motivational. <br>
           <br>Here are a few of my early sketches and an early Figma mockup: <br>
-          <img src="images/earlymockup1.png" style="width: 20%; height: auto;">
-          <img src="images/earlymockup3.png" style="width: 50%; height: auto;">
-          <img src="images/earlymockup2.png" style="width: 80%; height: auto;">
+          <img src="${earlymockup1}" style="width: 20%; height: auto;">
+          <img src="${earlymockup2}" style="width: 50%; height: auto;">
+          <img  src="${earlymockup3}" style="width: 80%; height: auto;">
           <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450"
               src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FANN3ehYS0TyPrKPEegSPd1%2FStocked-%2526-Stacked%3Ftype%3Ddesign%26node-id%3D105%253A3328%26mode%3Ddesign%26t%3DEO0FO2c3h1IWuOx1-1"
               allowfullscreen></iframe>
@@ -356,12 +375,136 @@ function StockednStacked() {
           on a similar path. It was a journey of learning, adapting, and ultimately, creating something that not only
           served a purpose but also inspired and motivated.
       </p>`,
-      image: stocked
+      image: stocked,
+    },
+    {
+      title: "Design Evolution Narrative",
+      content: `
+      <h1 style="text-align: center;">Design Evolution Narrative Draft</h1>
+
+      <p>As I reflect on the journey of developing my unique UI project, I'm reminded of the singular path I embarked
+          on. This project was a solo endeavor, a testament to my dedication and vision. It was born out of a personal
+          need, an urge to blend the realms of fitness and technology in a seamless, intuitive way. The result? An
+          all-in-one grocery list, inventory tracker, and meal planning app, with a special focus on the meal planning
+          aspect for this project. <br><br>
+
+          The heart of this project lies in its ability to cater to the needs of gym enthusiasts and meal preppers
+          like myself. My days spent juggling macro calculations and grocery lists highlighted a gap in the market - a
+          gap I was uniquely positioned to fill. Why me? Because I live the life of my target audience, understanding
+          intimately the nuances and specifics of what they need in such an app. <br><br>
+
+          I envisioned a UI that epitomized efficiency. Designed for the fast-paced lifestyle of its users, the app
+          not only tracks inventory but also assists in meal planning, all while calculating necessary nutritional
+          information. The user can simply increase the servings, and the app adeptly recalculates the macros - a
+          feature that's a true game-changer.<br><br>
+
+          Choosing the mobile platform for this app was a no-brainer. The nature of the app demanded accessibility at
+          the fingertips, catering to users who need to make quick, informed decisions about their meals and nutrition
+          on the go.<br><br>
+
+          The narrative that inspired this UI was deeply personal yet universally relatable - a story of
+          transformation. It centered around a college boy, driven by a heartbreak, who decides to take control of his
+          life through fitness and nutrition. This narrative shaped the UI, culminating in a design that's not just
+          functional but motivational. <br>
+          <br>Here are a few of my early sketches and an early Figma mockup: <br>
+          <img src="${earlymockup1}" style="width: 20%; height: auto;">
+          <img src="${earlymockup2}" style="width: 50%; height: auto;">
+          <img  src="${earlymockup3}" style="width: 80%; height: auto;">
+          <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450"
+              src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FANN3ehYS0TyPrKPEegSPd1%2FStocked-%2526-Stacked%3Ftype%3Ddesign%26node-id%3D105%253A3328%26mode%3Ddesign%26t%3DEO0FO2c3h1IWuOx1-1"
+              allowfullscreen></iframe>
+          <br>
+          In designing the system, I took pride in selecting modern, sleek fonts that are both attractive and easy to
+          read. The color palette was another area where I poured my creativity, choosing shades of blue for trust and
+          coolness, and vibrant orange to inject energy and positivity.
+          <br>This is my prototype before user tests: <br>
+          <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450"
+              src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FANN3ehYS0TyPrKPEegSPd1%2FStocked-%2526-Stacked%3Ftype%3Ddesign%26node-id%3D30%253A955%26mode%3Ddesign%26t%3D4RHr4dZqElNjCotj-1"
+              allowfullscreen></iframe>
+
+          <br>
+          In my prototype, the journey for users starts at the "Existing Plans" page. This isn't the central hub of
+          the application but rather the focal point for the task I was designing. Faced with uncertainty about the
+          extent of my project's scope, I ventured into designing for every possible user interaction. This included
+          features allowing users to create new meal plans, edit existing ones, add new ingredients to a meal, and
+          formulate individual meals within an existing plan.
+
+          This approach, while comprehensive, led to a significant challenge. Attempting to cover the full spectrum of
+          user interactions resulted in the creation of numerous screens, a process that became both monotonous and
+          complex. The ambition to capture every interaction inadvertently led to incomplete workflows and a dilution
+          of the project's focus. It was a learning curve in understanding the balance between comprehensive
+          functionality and maintaining a clear, manageable scope in design. <br><br>
+
+          User testing was an eye-opener. I specifically chose gym-goers and meal preppers, including those
+          experienced in macro tracking apps. Their feedback led to several significant changes:
+          <br><br>
+          Visual Confusion: The initial design made it difficult for users to distinguish between the meal plan page
+          and the meal page, as they appeared too similar. This confusion could lead to a frustrating user experience,
+          as users might find themselves on the wrong page without realizing it. By introducing different background
+          images for these pages, I created a distinct visual identity for each, making it immediately clear to users
+          where they were in the app. This not only improved the user experience but also reduced the cognitive load,
+          as users no longer had to second-guess their navigation choices.
+          <br><br>
+          Ambiguous Page Names: Initially, the page names in the app were generic, which often left users puzzled
+          about their content and purpose. Clear and descriptive names are crucial in any interface as they guide
+          users and set the right expectations about the page content. By making the page names more descriptive, I
+          enhanced the clarity and ease of navigation. Users could now navigate more intuitively, understanding at a
+          glance the purpose of each page.
+          <br><br>
+          User Guidance: A lack of clear guidance on each page can lead to users feeling lost or overwhelmed,
+          especially if they are new to the app. Adding concise descriptions to each page provided users with
+          immediate context, helping them understand the functionality and purpose of the page they were on. This
+          straightforward guidance significantly improved user comprehension and confidence in using the app.
+          <br><br>
+          Navigation Difficulties: If button functionalities are not clear, users can become frustrated, leading to a
+          poor experience and potentially causing them to abandon the app. Clear indications of what each button does
+          simplified the navigation, making the app more user-friendly. This clarity in navigation is crucial in
+          maintaining the flow and ensuring that users can easily accomplish their tasks without confusion or
+          frustration.
+          <br><br>
+          Inconsistent Element Alignment: Inconsistent design elements can disrupt the visual flow and make the app
+          appear unprofessional. By standardizing the alignment of elements across all screens, I created a cohesive
+          and aesthetically pleasing interface. This consistency not only improved the app’s visual appeal but also
+          contributed to a more seamless user experience, as users could easily predict where to find information
+          based on their experience on other screens.
+          <br><br>
+          Inadequate Visual Hierarchy: A well-structured visual hierarchy is key to helping users navigate and
+          understand the layout of an application. Initially, the lack of a clear visual hierarchy made it difficult
+          for users to track their location within the app and understand the relationship between different pages.
+          Introducing breadcrumbs was a strategic decision to enhance navigational efficiency and orientation.
+          Breadcrumbs provide a clear path of navigation, allowing users to easily track their journey within the app
+          and navigate back if needed, thus improving the overall user experience.
+          <br><br>
+          Here is my prototype after the changes prompted by my user tests were implemented:
+          <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450"
+              src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FANN3ehYS0TyPrKPEegSPd1%2FStocked-%2526-Stacked%3Ftype%3Ddesign%26node-id%3D209%253A7160%26mode%3Ddesign%26t%3DEO0FO2c3h1IWuOx1-1"
+              allowfullscreen></iframe>
+          <br>
+          My design values of ambition and confidence shone through every aspect of the UI. The color choices and the
+          consistent, straightforward layout were not just about aesthetics but also about empowering users to take
+          control of their fitness and dietary journey with confidence and ease.
+
+          In essence, this project was a labor of love, a manifestation of my personal journey, and a tribute to those
+          on a similar path. It was a journey of learning, adapting, and ultimately, creating something that not only
+          served a purpose but also inspired and motivated.
+      </p>`,
+      image: stocked,
     },
   ];
   return (
-    <div style={blurStyle} >
-      <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent:"space-between", marginTop:'4rem' }}>
+    <div style={{ ...blurStyle, marginTop: "4rem" }}>
+      <h1 style={{ display: "flex", justifyContent: "center" }}>
+        User Interface
+      </h1>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          justifyContent: "space-between",
+          marginTop: "4rem",
+        }}
+      >
         {blogs.map((blog, index) => (
           <BlogCard
             key={index}
@@ -382,4 +525,4 @@ function StockednStacked() {
   );
 }
 
-export default StockednStacked
+export default StockednStacked;

@@ -2,28 +2,31 @@ import React, { useState } from "react";
 import { Grid, TextField, Button, Box, Typography } from "@mui/material";
 
 interface FormDetails {
-  firstName: string;
-  lastName: string;
+  name: string;
   email: string;
-  phone: string;
   message: string;
-}
-
-interface Status {
-  success?: boolean;
-  message?: string;
 }
 
 function Contact() {
   const [formDetails, setFormDetails] = useState<FormDetails>({
-    firstName: "",
-    lastName: "",
+    name: "",
     email: "",
-    phone: "",
     message: "",
   });
-  const [buttonText, setButtonText] = useState("Send");
-  const [status, setStatus] = useState<Status>({});
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormDetails({
+      ...formDetails,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+  };
+
   return (
     <section
       id="contact"
@@ -40,7 +43,7 @@ function Contact() {
           width: "80vw",
         }}
       >
-        <Grid container alignItems="center" columns={12}>
+        <Grid container alignItems="basweline" columns={12}>
           <Grid item xs={4}>
             <Typography
               sx={{
@@ -51,18 +54,47 @@ function Contact() {
               Contact me
             </Typography>
           </Grid>
-          <Grid item xs={4}>
-            <TextField label="First Name"></TextField>
-          </Grid>
-          <Grid item xs={4}>
-            <TextField label="Last Name"></TextField>
-          </Grid>
-        <Grid item xs={4}></Grid>
-          <Grid item xs={4}>
-            <TextField label="Phone Number"></TextField>
-          </Grid>
-          <Grid item xs={4}>
-            <TextField label="Email"></TextField>
+          <Grid item xs={8}>
+            {" "}
+            <form id="contact-form" onSubmit={handleSubmit}>
+              <TextField
+                label="Name"
+                name="name"
+                value={formDetails.name}
+                onChange={handleChange}
+                fullWidth
+                margin="normal"
+              />
+              <TextField
+                label="Email Address"
+                name="email"
+                type="email"
+                value={formDetails.email}
+                onChange={handleChange}
+                fullWidth
+                margin="normal"
+              />
+              <TextField
+                label="Message"
+                name="message"
+                multiline
+                rows={4}
+                value={formDetails.message}
+                onChange={handleChange}
+                fullWidth
+                margin="normal"
+              />
+              <Button type="submit" variant="contained" color="primary" 
+                    sx={{
+                      borderRadius: "4px",
+                      backgroundColor: "#9E9BFF",
+                      color: "white",
+                      fontFamily: "'Share Tech Mono', monospace",
+                      fontSize: "1.5rem", marginBottom:"1rem"
+                    }}>
+                Submit
+              </Button>
+            </form>
           </Grid>
         </Grid>
       </Box>
