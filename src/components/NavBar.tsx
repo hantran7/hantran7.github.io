@@ -10,23 +10,27 @@ function NavBar() {
 
   useEffect(() => {
     const onScroll = () => {
-      const sections = ['about', 'work', 'contact']; 
-      let activeSection = '';
-
-      sections.forEach((sectionId) => {
-        const section = document.getElementById(sectionId);
-        if (section) {
-          const rect = section.getBoundingClientRect();
-          if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-            activeSection = sectionId;
+      if (window.location.pathname === '/ui-course' || window.location.pathname === '/stocked-&-stacked') {
+        setActiveLink('');
+      } else {
+        const sections = ['about', 'work', 'contact']; 
+        let activeSection = '';
+  
+        sections.forEach((sectionId) => {
+          const section = document.getElementById(sectionId);
+          if (section) {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+              activeSection = sectionId;
+            }
           }
-        }
-      });
-
-      setActiveLink(activeSection);
+        });
+  
+        setActiveLink(activeSection);
+      }
       setScrolled(window.scrollY > 64);
     };
-
+  
     const debounce = (func: () => void, delay: number): () => void => {
       let timer: NodeJS.Timeout | null = null;
 
@@ -38,12 +42,12 @@ function NavBar() {
       };
     };
 
-
     const debouncedScrollHandler = debounce(onScroll, 10);
-
+  
     window.addEventListener("scroll", debouncedScrollHandler);
     return () => window.removeEventListener("scroll", debouncedScrollHandler);
   }, []);
+  
 
 
   const handleScroll = (sectionId: string) => {
@@ -89,17 +93,26 @@ function NavBar() {
         </NavHashLink>
 
         <NavHashLink smooth to="/#about" style={{ textDecoration: 'none' }}>
-          <Button onClick={() => handleScroll('about')} sx={{ fontFamily: "'Share Tech Mono', monospace", fontSize: "1.5rem", marginRight: "3rem", color: activeLink === 'about' ? '#8E8FFA' : (scrolled ? 'white' : 'black') }} >
+          <Button onClick={() => handleScroll('about')} sx={{ fontFamily: "'Share Tech Mono', monospace", fontSize: "1.5rem", marginRight: "3rem", color: activeLink === 'about' ? '#8E8FFA' : (scrolled ? 'white' : 'black'), 
+                      "&:hover": {
+                        backgroundColor: "rgba(234,144,108,0.44861694677871145)",
+                      }, }} >
             About
           </Button>
         </NavHashLink>
         <NavHashLink smooth to="/#work" style={{ textDecoration: 'none' }}>
-          <Button onClick={() => handleScroll('work')} sx={{ fontFamily: "'Share Tech Mono', monospace", fontSize: "1.5rem", marginRight: "3rem", color: activeLink === 'work' ? '#8E8FFA' : (scrolled ? 'white' : 'black') }}>
+          <Button onClick={() => handleScroll('work')} sx={{ fontFamily: "'Share Tech Mono', monospace", fontSize: "1.5rem", marginRight: "3rem", color: activeLink === 'work' ? '#8E8FFA' : (scrolled ? 'white' : 'black'), 
+                      "&:hover": {
+                        backgroundColor: "rgba(234,144,108,0.44861694677871145)",
+                      }, }}>
             Work
           </Button>
         </NavHashLink>
         <NavHashLink smooth to="/#contact" style={{ textDecoration: 'none' }}>
-          <Button onClick={() => handleScroll('contact')} sx={{ fontFamily: "'Share Tech Mono', monospace", fontSize: "1.5rem", color: activeLink === 'contact' ? '#8E8FFA' : (scrolled ? 'white' : 'black') }}>
+          <Button onClick={() => handleScroll('contact')} sx={{ fontFamily: "'Share Tech Mono', monospace", fontSize: "1.5rem", color: activeLink === 'contact' ? '#8E8FFA' : (scrolled ? 'white' : 'black'), 
+                      "&:hover": {
+                        backgroundColor: "rgba(234,144,108,0.44861694677871145)",
+                      }, }}>
             Contact
           </Button>
         </NavHashLink>

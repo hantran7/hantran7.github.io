@@ -176,7 +176,7 @@ function UIWork() {
           colors harmonize tranquility
           with dynamism, crafting a refreshing yet grounded design.
       </p>
-      <imgvsrc="${neutralcc}" alt="Neutral Color Scheme Campus Cash" style="width: 20%; height: auto;">
+      <img src="${neutralcc}" alt="Neutral Color Scheme Campus Cash" style="width: 20%; height: auto;">
       <p>
           Although the this redesigned UI does not fit into a harmonious combination, it features a
           serene pastel blue app bar,
